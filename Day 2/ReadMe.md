@@ -1,5 +1,3 @@
-Type Error, Type Checking and Type Conversion 24. Number Manipulation and F Strings in Python
-
 # Day 2 - Beginner - Understanding Data Types and How to Manipulate Strings
 
 ## What I have learned?
