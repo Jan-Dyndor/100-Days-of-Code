@@ -6,4 +6,4 @@
 - Code Blocks
 - While Loops
 
-## [I did not complet a Day 6 project - Robot in Maze. I will come back to it after day 15.]()
+## [I did not complet a Day 6 project - Robot in Maze. I will come back to it after day 15 is done.]()
