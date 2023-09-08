@@ -11,3 +11,8 @@
 
 https://replit.com/@Jan-Dyndor/Paint-aera-calculator
 https://replit.com/@Jan-Dyndor/day-8-start#main.py
+https://replit.com/@Jan-Dyndor/Exercise-2-Prime-Numbers#main.py
+https://replit.com/@Jan-Dyndor/caesar-cipher-1-start#main.py
+https://replit.com/@Jan-Dyndor/caesar-cipher-2-start#main.py
+https://replit.com/@Jan-Dyndor/caesar-cipher-3-start#main.py
+https://replit.com/@Jan-Dyndor/caesar-cipher-4-start#main.py
