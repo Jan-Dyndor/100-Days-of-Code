@@ -5,14 +5,18 @@
 - Function with inputs
 - Arguments and Parameters
 
-## [Completed Project Day 7 - Hangman Game](https://replit.com/@Jan-Dyndor/Day-7-Hangman-5-Start)
+## [Completed Project Day 8 - Cesar Cipher ](https://replit.com/@Jan-Dyndor/caesar-cipher-4-start#main.py)
 
-### Steps to complete a Hangman Game
+### Steps to complete a Cesar Cipher and other small projects
 
-https://replit.com/@Jan-Dyndor/Paint-aera-calculator
-https://replit.com/@Jan-Dyndor/day-8-start#main.py
-https://replit.com/@Jan-Dyndor/Exercise-2-Prime-Numbers#main.py
-https://replit.com/@Jan-Dyndor/caesar-cipher-1-start#main.py
-https://replit.com/@Jan-Dyndor/caesar-cipher-2-start#main.py
-https://replit.com/@Jan-Dyndor/caesar-cipher-3-start#main.py
-https://replit.com/@Jan-Dyndor/caesar-cipher-4-start#main.py
+## [Small project - Aera Calculator](https://replit.com/@Jan-Dyndor/Paint-aera-calculator)
+
+## [Small project - Prime Numbers](https://replit.com/@Jan-Dyndor/Exercise-2-Prime-Numbers#main.py)
+
+## [Cesar Cipher Step 1 ](https://replit.com/@Jan-Dyndor/caesar-cipher-1-start#main.py)
+
+## [Cesar Cipher Step 2 ](https://replit.com/@Jan-Dyndor/caesar-cipher-2-start#main.py)
+
+## [Cesar Cipher Step 3 ](https://replit.com/@Jan-Dyndor/caesar-cipher-3-start#main.py)
+
+## [Cesar Cipher Step 4 - FINAL ](https://replit.com/@Jan-Dyndor/caesar-cipher-4-start#main.py)
