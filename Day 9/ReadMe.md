@@ -5,7 +5,7 @@
 - Dictionaries
 - Nesting (like List inside list or dictionary inside dictionary and also mixing lists and dictionaries )
 
-## [Completed Project Day 9 - Blin Auction](https://replit.com/@Jan-Dyndor/blind-auction-start)
+## [Completed Project Day 9 - Blind Auction](https://replit.com/@Jan-Dyndor/blind-auction-start)
 
 ### Other small projects
 
