@@ -59,11 +59,12 @@
 
 # Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 
-#! My version on Blackjack game i will come back to it tommorow (14.09.2023):
-
-import random
+# My version on Blackjack game:
 
 # from art import logo
+# from replit import clear
+import os
+import random
 
 
 # Functions
@@ -75,69 +76,73 @@ def pick_cards():
 
 
 def display_results(player, computer):
-    """Function will ddisplay cards and score fo player and computer"""
+    """Function will display cards and score of player and computer"""
     print(f"Your cards: {player}, current scores: {sum(player)}")
-    print(f"Computer's first card {computer}, computer scores: {sum(computer)}")
+    print(f"Computer's final card {computer}, computer scores: {sum(computer)}")
 
 
 def blackjack():
-    play = True
-    while play:
-        # print(logo)
-        if input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "n":
-            play = False
-            blackjack()
-            # fix that code above
-        player_cards = list()
-        computer_cards = list()
-        for card in range(2):
-            player_cards.append(pick_cards())
-            computer_cards.append(pick_cards())
-        print(f"Your cards: {player_cards}, current scores: {sum(player_cards)}")
-        print(f"Computer's first card {computer_cards[0]}")
-        another_card = True
-        while another_card:
-            if input("Type 'y' to get another card, type 'n' to pass: ") == "y":
-                card = pick_cards()
-                if card == 11:
-                    if sum(player_cards.append(card)) > 21:
-                        player_cards.append(1)
-                else:
-                    player_cards.append(card)
+    # print(logo)
+    player_cards = list()
+    computer_cards = list()
+    for card in range(2):
+        player_cards.append(pick_cards())
+        computer_cards.append(pick_cards())
+    print(f"Your cards: {player_cards}, current scores: {sum(player_cards)}")
+    print(f"Computer's first card {computer_cards[0]}")
+    if sum(player_cards) == 21:
+        return print("You win")
+    another_card = True
+    while another_card:
+        if input("Type 'y' to get another card, type 'n' to pass: ") == "y":
+            card = pick_cards()
+            if card == 11:
+                player_cards.append(card)
+                if sum(player_cards) > 21:
+                    del player_cards[-1]
+                    player_cards.append(1)
+            else:
+                player_cards.append(card)
                 print(
                     f"Your cards: {player_cards}, current scores: {sum(player_cards)}"
                 )
-                print(f"Computer's cards {computer_cards[0]}")
-                if sum(player_cards) > 21:
-                    display_results(player_cards, computer_cards)
-                    return print("You lose")
-            else:
-                another_card = False
-                while sum(computer_cards) < 17:
-                    card = pick_cards()
-                    if card == 11:
-                        if sum(computer_cards.append(card)) > 21:
-                            computer_cards.append(1)
-                    else:
-                        computer_cards.append(card)
-
-                if sum(computer_cards) > 21:
-                    display_results(player_cards, computer_cards)
-                    return print("You win")
-                if sum(player_cards) > sum(computer_cards):
-                    display_results(player_cards, computer_cards)
-                    return print("You win")
-                elif sum(player_cards) < sum(computer_cards):
-                    display_results(player_cards, computer_cards)
-                    return print("You lose")
+                print(f"Computer's first {computer_cards[0]}")
+            if sum(player_cards) > 21:
+                display_results(player_cards, computer_cards)
+                return print("You lose")
+            if sum(player_cards) == 21:
+                display_results(player_cards, computer_cards)
+                return print("You win")
+        else:
+            another_card = False
+            while sum(computer_cards) < 17:
+                card = pick_cards()
+                if card == 11:
+                    computer_cards.append(card)
+                    if sum(computer_cards) > 21:
+                        del computer_cards[-1]
+                        computer_cards.append(1)
                 else:
-                    display_results(player_cards, computer_cards)
-                    return print("Drow")
+                    computer_cards.append(card)
+    if sum(computer_cards) > 21:
+        display_results(player_cards, computer_cards)
+        return print("You win")
+    if sum(player_cards) > sum(computer_cards):
+        display_results(player_cards, computer_cards)
+        return print("You win")
+    elif sum(player_cards) < sum(computer_cards):
+        display_results(player_cards, computer_cards)
+        return print("You lose")
+    else:
+        display_results(player_cards, computer_cards)
+        return print("Drow")
 
-            # blackjack()
 
-
-blackjack()
-print("Thanks for playing!")
-
-# nie chce player grac to play = flase
+play = True
+while play:
+    if input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
+        os.system("cls")
+        blackjack()
+        print("Thanks for playing!")
+    else:
+        play = False
