@@ -76,11 +76,25 @@ def pick_cards():
 
 
 def display_results(player, computer):
-    """Function will display cards and score of player and computer"""
+    """Function will display final cards and score of player and computer"""
     print(f"Your cards: {player}, current scores: {sum(player)}")
     print(f"Computer's final card {computer}, computer scores: {sum(computer)}")
 
 
+def display_results_in_game(player, computer):
+    """Function will display cards and score of player and computer"""
+    print(f"Your cards: {player}, current scores: {sum(player)}")
+    print(f"Computer's card {computer}, computer scores: {sum(computer)}")
+
+
+# Zastanów się czy nie zmienić funkcji display results na bez słówka FINAL. Albo zmień cos bo jak karta == 11 i mozna ją użyć to wywala że:
+
+
+# type 'y' to get another card, type 'n' to pass: y
+# Your cards: [2, 4, 11], current scores: 17
+# Computer's final card [10, 7], computer scores: 17
+# Type 'y' to get another card, type 'n' to pass:
+#  czyli możemy dalej grać ale pokazuje że to juz sa finl karty
 def blackjack():
     # print(logo)
     player_cards = list()
@@ -101,7 +115,9 @@ def blackjack():
                 if sum(player_cards) > 21:
                     del player_cards[-1]
                     player_cards.append(1)
-                    display_results(player_cards, computer_cards)
+                    display_results_in_game(player_cards, computer_cards)
+                else:
+                    display_results_in_game(player_cards, computer_cards)
             else:
                 player_cards.append(card)
                 print(
