@@ -101,6 +101,7 @@ def blackjack():
                 if sum(player_cards) > 21:
                     del player_cards[-1]
                     player_cards.append(1)
+                    display_results(player_cards, computer_cards)
             else:
                 player_cards.append(card)
                 print(
