@@ -52,7 +52,7 @@ def check_resources():
 
 
 def make_drink(drink):
-    """Functionw will do drink if we have enought resources will return true"""
+    """Function will do drink if we have enought resources will return true"""
     water_res, milk_res, coffe_res = check_resources()
     if drink == "espresso":
         water_drink, coffe_drink = drink_ingredients(drink)
