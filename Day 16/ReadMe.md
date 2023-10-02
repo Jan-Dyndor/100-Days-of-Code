@@ -1,4 +1,7 @@
-# Day 16 - Beginner - Higher Lower Game Project
+# Day 16 - Beginner - Higher Lower Game Project 
+# I had to take a break because of a big changes in my life (I got a job and had to move out from current apartment 
+# to another city). I am not fully ready yet to tackle 100 Days of Code challange but will do my best learn from this day on. 
+# Keep your fingers crossed! 
 
 ## What I have learned?
 
@@ -16,7 +19,5 @@ Defining Classes names we use PascalCase ex. CarClass()
 - I also learned how to integrate existing package of code into my project (https://pypi.org/)
 To install packages: Files -> Settings -> Project we want some package ->  Python Interpreter -> + sign and we write what
 package we want to install. 
-    
-## [Completed Project Day 14 - Higher Lower Game MY version ](https://replit.com/@Jan-Dyndor/higher-lower-start)
 
-## [Higher Lower Game with Angela](https://replit.com/@Jan-Dyndor/Higher-lower-game-Angela#main.py)
+# I have completed Coffe Machine Project.

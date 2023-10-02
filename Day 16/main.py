@@ -8,6 +8,7 @@ money = MoneyMachine()
 
 should_continue = True
 while should_continue:
+    print("What would you like to drink?")
     print(menu.get_items())
     drink = input()
     if drink == "off":
