@@ -22,13 +22,3 @@ while should_continue:
             if money.make_payment(drink_object.cost):
                 coffe_maker.make_coffee(drink_object)
 
-
-
-
-
-
-
-
-
-
-
