@@ -14,3 +14,5 @@ name = mn.class()
 
 Some modules can not be imported, we have to download them and install form
 Python Packages https://pypi.org/ or write normal import statement and PyCharm will help to install it 
+
+I have also learned about Tuples. 
