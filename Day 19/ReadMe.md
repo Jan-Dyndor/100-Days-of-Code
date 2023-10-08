@@ -9,4 +9,4 @@ When we use functions s an argument (something that is passed to another functio
 we do not close function with parenthesis )
 ex. def func1(fun2)
 
-
+We can have a bunch of Instances od an object and every of them can have a different state. 
