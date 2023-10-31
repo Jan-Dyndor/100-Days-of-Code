@@ -3,35 +3,38 @@ from turtle import Screen
 from player import Player
 from car_manager import CarManager
 import os
-from scoreboard import Scoreboard
+from score import Score
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
 
-
 player = Player()
+score = Score()
+
 screen.listen()
 screen.onkey(player.move, "Up")
 
 cars = []
 game_is_on = True
 make_car = 6
-level = 1
 
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+    # Create a car every 6 loops
     if make_car % 6 == 0:
         car = CarManager()
         cars.append(car)
-        # make_car += 1
+    # move every car
     for car in cars:
         car.move_car()
-        # TODO The car object is 20x40, now i measure it like square 20x20. Will try to change it later
+        # detect a collision with a car
         if player.distance(car) < 20:
-            print("hit")
+            score.game_over()
+            screen.update()
             os.system("pause")
+    # Player wins
     if player.ycor() >= 280:
         car_temp = CarManager()
         car_temp.move_faster()
@@ -42,8 +45,5 @@ while game_is_on:
         player.reset()
         cars.clear()
         car_temp.clear()
-        level += 1
+        score.next_level()
     make_car += 1
-
-
-

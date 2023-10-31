@@ -10,11 +10,8 @@ class Player(Turtle):
         super().__init__()
         self.reset()
 
-
     def move(self):
         self.forward(MOVE_DISTANCE)
-
-
 
     def reset(self):
         self.penup()

@@ -5,6 +5,7 @@ STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 CAR_LIST = list()
 
+
 class CarManager(Turtle):
     def __init__(self):
         super().__init__()
@@ -14,16 +15,10 @@ class CarManager(Turtle):
         self.goto(260, random.randint(-250, 250))
         self.seth(180)
         self.shape("square")
-        # self.move_increment = 10
-        # self.starting_distance = 5
         CAR_LIST.append(self)
-
-
-
 
     def move_car(self):
         self.forward(STARTING_MOVE_DISTANCE)
-        print(STARTING_MOVE_DISTANCE)
 
     def move_faster(self):
         global STARTING_MOVE_DISTANCE
