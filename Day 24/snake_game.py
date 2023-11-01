@@ -37,10 +37,12 @@ while game_is_on:
         score_board.add_points()
 #     Detect collision with wall
     if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -280:
+        score_board.write_data_file()
         score_board.reset()
         snake.reset()
     for segment in snake.segments[1:]:
         if snake.snake_head.distance(segment) < 10:
+            score_board.write_data_file()
             score_board.reset()
             snake.reset()
 
