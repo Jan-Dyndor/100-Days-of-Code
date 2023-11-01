@@ -1,0 +1,2 @@
+Hello! My name is Jan.
+And I am a pharmacist and 3rd year CS student who want to make it to Machine Learning!
