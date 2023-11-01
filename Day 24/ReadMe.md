@@ -6,3 +6,5 @@ Closing a file is important - Python uses some of the computer resources when op
 Python might just realize those resources, but we do not know when and if. So it is a good practice to close a file.
 
 If we open a file using `with` method we do not need to remember to close it down
+
+## I have also learned that at this stage i should concentrate very much not on code optimization but rather on code readability to write clean
