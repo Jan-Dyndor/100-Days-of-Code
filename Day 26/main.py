@@ -39,6 +39,11 @@ import random
 # new_dict = {new_key:new_value for item in list}
 # new_dict = {new_key:new_value for (key,value) in dict.items()}
 
-names = ["Alex", "Beth", "Caroline", "Dave", "Elenor", "Freddie"]
-student_scores = {name: random.randint(0, 100) for name in names}
-print(student_scores)
+# names = ["Alex", "Beth", "Caroline", "Dave", "Elenor", "Freddie"]
+# student_scores = {name: random.randint(0, 100) for name in names}
+# print(student_scores)
+#
+# passed_students = {name: value for (name,value) in student_scores.items() if value >= 60 }
+# print(passed_students)
+
+
