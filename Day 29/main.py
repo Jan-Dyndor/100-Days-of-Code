@@ -3,6 +3,7 @@ from tkinter import messagebox
 import random
 # copy the password instantly after its generated
 import pyperclip
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -40,20 +41,38 @@ def save_data():
     website = web_ent.get()
     email = user_ent.get()
     password = password_ent.get()
+    new_data = {
+        website: {
+            "email": email,
+            "password": password
+        }
+    }
 
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(title="Oops!", message="Do not leave any field empty!")
     else:
-        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: "
-                                       f"\n email:{email} \n password: {password} \n Is it OK to save?")
+        data = {}
+        try:
+            with open("data.json", "r") as data_file:
+                # Read data
+                data = json.load(data_file)
+                # print(data)
+        except (FileNotFoundError, json.JSONDecodeError):
+            with open("data.json", "w") as data_file:
+                # Save updated data
+                json.dump(new_data, data_file, indent=4)
+        else:
+            # Update data
+            data.update(new_data)
+            with open("data.json", "w") as data_file:
+                # Save updated data
+                json.dump(data, data_file, indent=4)
 
-        if is_ok:
-            with open("data.txt", "a") as file:
-                file.write(f"{website} | {email} | {password}\n")
-            web_ent.delete(0, END)
-            user_ent.delete(0, END)
-            password_ent.delete(0, END)
-            user_ent.insert(END, "example@email.com")
+
+        web_ent.delete(0, END)
+        user_ent.delete(0, END)
+        password_ent.delete(0, END)
+        user_ent.insert(END, "example@email.com")
 
 
 
