@@ -51,12 +51,11 @@ def save_data():
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(title="Oops!", message="Do not leave any field empty!")
     else:
-        data = {}
         try:
             with open("data.json", "r") as data_file:
                 # Read data
                 data = json.load(data_file)
-                # print(data)
+
         except (FileNotFoundError, json.JSONDecodeError):
             with open("data.json", "w") as data_file:
                 # Save updated data
@@ -67,12 +66,34 @@ def save_data():
             with open("data.json", "w") as data_file:
                 # Save updated data
                 json.dump(data, data_file, indent=4)
+        finally:
+            web_ent.delete(0, END)
+            user_ent.delete(0, END)
+            password_ent.delete(0, END)
+            user_ent.insert(END, "example@email.com")
 
+# Find password function
 
-        web_ent.delete(0, END)
-        user_ent.delete(0, END)
-        password_ent.delete(0, END)
-        user_ent.insert(END, "example@email.com")
+def website_popup(data):
+    website = web_ent.get()
+    if website in data:
+        messagebox.showinfo(title=f"Website {website}", message=f"Email: {data[website]['email']}\nPassword: {data[website]['password']}")
+    else:
+        messagebox.showinfo(title=f"Oops!", message=f"No details for the website '{website}' exist!")
+
+def find_password():
+    website = web_ent.get()
+    if not website:
+        messagebox.showinfo(title="Oops!", message="Enter w website!")
+    else:
+        try:
+            with open("data.json", "r") as data_file:
+                data = json.load(data_file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            messagebox.showinfo(title="Oops!", message="No Data File Found Or File Is Empty")
+        else:
+            website_popup(data)
+
 
 
 
@@ -93,16 +114,19 @@ web_label = Label(text="Website:")
 web_label.grid(column=0, row=1, sticky="e")
 
 
-web_ent = Entry(width=43)
+web_ent = Entry()
 web_ent.grid(column=1, row=1, columnspan=2, sticky="w")
 web_ent.focus()
+
+search_btn = Button(text="Search", command=find_password)
+search_btn.grid(column=2, row=1)
 
 
 user_label = Label(text="Email/Username:")
 user_label.grid(column=0, row=2, sticky="e")
 
-user_ent = Entry(width=43)
-user_ent.grid(column=1, row=2, columnspan=2, sticky="w")
+user_ent = Entry()
+user_ent.grid(column=1, row=2, columnspan=1, sticky="w")
 user_ent.insert(END, "example@email.com")
 
 password_label = Label(text="Password:")
