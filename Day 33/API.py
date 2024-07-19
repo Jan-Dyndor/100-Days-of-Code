@@ -61,3 +61,16 @@ def can_we_see_iss():
 
 
 can_we_see_iss()
+
+# while True:
+#     time.sleep(60)
+#     if is_iss_overhead() and is_night():
+#         connection = smtplib.SMTP("__YOUR_SMTP_ADDRESS_HERE___")
+#         connection.starttls()
+#         connection.login(MY_EMAIL, MY_PASSWORD)
+#         connection.sendmail(
+#             from_addr=MY_EMAIL,
+#             to_addrs=MY_EMAIL,
+#             msg="Subject:Look Up👆\n\nThe ISS is above you in the sky."
+#         )
+#
