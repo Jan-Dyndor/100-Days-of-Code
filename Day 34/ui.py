@@ -23,11 +23,11 @@ class QuizInterface:
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
 
         true_image = PhotoImage(file="images/true.png")
-        self.true_button = Button(image=true_image,highlightthickness=0)
+        self.true_button = Button(image=true_image,highlightthickness=0, command=self.true_button)
         self.true_button.grid(row=2, column=0)
 
         false_image = PhotoImage(file="images/false.png")
-        self.false_image = Button(image=false_image, highlightthickness=0)
+        self.false_image = Button(image=false_image, highlightthickness=0, command=self.false_button)
         self.false_image.grid(row=2, column=1)
 
         self.get_next_question()
@@ -39,5 +39,32 @@ class QuizInterface:
     # does not have that because we will not use it anywhere else
 
     def get_next_question(self):
-        question_text= self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, text = question_text)
+        self.canvas.config(bg="white")
+        if self.quiz.still_has_questions():
+            self.score_label.config(text= f"Score: {self.quiz.score}")
+            question_text = self.quiz.next_question()
+            self.canvas.itemconfig(self.question_text, text=question_text)
+        else:
+            self.canvas.itemconfig(self.question_text, text="END")
+            self.true_button.config(state="disabled")
+            self.false_image.config(state="disabled")
+
+
+
+    def true_button(self):
+        is_right = self.quiz.check_answer("true")
+        self.give_feedback(is_right)
+
+    def false_button(self):
+        is_right = self.quiz.check_answer("false")
+        self.give_feedback(is_right)
+
+    def give_feedback(self, is_right):
+        if(is_right):
+            self.canvas.config(bg="green")
+
+        else:
+            self.canvas.config(bg="red")
+
+        self.window.after(1000, self.get_next_question)
+
